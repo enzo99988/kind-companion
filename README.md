@@ -1,12 +1,12 @@
-# Kind Companion
+# Kind Connection Hub
 
-.
+i
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/d98c0398-13c5-4bc8-9118-93f182936d00).
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/13766bcd-908b-4956-94f3-c84db2195c09).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
 - **Stay in sync**: every change made in Lovable is committed straight to this repository.

@@ -10,33 +10,324 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteRouteImport } from './routes/admin/route'
+import { Route as AppRouteRouteImport } from './routes/app/route'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as OfertaRouteImport } from './routes/oferta'
+import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as AdminIndexRouteImport } from './routes/admin/index'
+import { Route as AdminAssinaturasRouteImport } from './routes/admin/assinaturas'
+import { Route as AdminCategoriasRouteImport } from './routes/admin/categorias'
+import { Route as AdminConfiguracoesRouteImport } from './routes/admin/configuracoes'
+import { Route as AdminNotificacoesRouteImport } from './routes/admin/notificacoes'
+import { Route as AdminUsuariosRouteImport } from './routes/admin/usuarios'
+import { Route as AppProtectedRouteRouteImport } from './routes/app/_protected/route'
+import { Route as AppCadastroRouteImport } from './routes/app/cadastro'
+import { Route as AppLoginRouteImport } from './routes/app/login'
+import { Route as AppRecuperarAcessoRouteImport } from './routes/app/recuperar-acesso'
+import { Route as AppRedefinirSenhaRouteImport } from './routes/app/redefinir-senha'
+import { Route as AdminNoticiasIndexRouteImport } from './routes/admin/noticias/index'
+import { Route as AdminNoticiasNovaRouteImport } from './routes/admin/noticias/nova'
+import { Route as AppProtectedIndexRouteImport } from './routes/app/_protected/index'
+import { Route as AppProtectedMinhaContaRouteImport } from './routes/app/_protected/minha-conta'
+import { Route as AppProtectedNotificacoesRouteImport } from './routes/app/_protected/notificacoes'
+import { Route as AdminNoticiasIdEditarRouteImport } from './routes/admin/noticias/$id.editar'
+import { Route as AppProtectedNoticiasIndexRouteImport } from './routes/app/_protected/noticias.index'
+import { Route as AppProtectedNoticiasSlugRouteImport } from './routes/app/_protected/noticias.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRouteRoute = AdminRouteRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRouteRoute = AppRouteRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfertaRoute = OfertaRouteImport.update({
+  id: '/oferta',
+  path: '/oferta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminAssinaturasRoute = AdminAssinaturasRouteImport.update({
+  id: '/assinaturas',
+  path: '/assinaturas',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminCategoriasRoute = AdminCategoriasRouteImport.update({
+  id: '/categorias',
+  path: '/categorias',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminConfiguracoesRoute = AdminConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminNotificacoesRoute = AdminNotificacoesRouteImport.update({
+  id: '/notificacoes',
+  path: '/notificacoes',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminUsuariosRoute = AdminUsuariosRouteImport.update({
+  id: '/usuarios',
+  path: '/usuarios',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AppProtectedRouteRoute = AppProtectedRouteRouteImport.update({
+  id: '/_protected',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppCadastroRoute = AppCadastroRouteImport.update({
+  id: '/cadastro',
+  path: '/cadastro',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppLoginRoute = AppLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppRecuperarAcessoRoute = AppRecuperarAcessoRouteImport.update({
+  id: '/recuperar-acesso',
+  path: '/recuperar-acesso',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppRedefinirSenhaRoute = AppRedefinirSenhaRouteImport.update({
+  id: '/redefinir-senha',
+  path: '/redefinir-senha',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AdminNoticiasIndexRoute = AdminNoticiasIndexRouteImport.update({
+  id: '/noticias/',
+  path: '/noticias/',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AdminNoticiasNovaRoute = AdminNoticiasNovaRouteImport.update({
+  id: '/noticias/nova',
+  path: '/noticias/nova',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AppProtectedIndexRoute = AppProtectedIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppProtectedRouteRoute,
+} as any)
+const AppProtectedMinhaContaRoute = AppProtectedMinhaContaRouteImport.update({
+  id: '/minha-conta',
+  path: '/minha-conta',
+  getParentRoute: () => AppProtectedRouteRoute,
+} as any)
+const AppProtectedNotificacoesRoute =
+  AppProtectedNotificacoesRouteImport.update({
+    id: '/notificacoes',
+    path: '/notificacoes',
+    getParentRoute: () => AppProtectedRouteRoute,
+  } as any)
+const AdminNoticiasIdEditarRoute = AdminNoticiasIdEditarRouteImport.update({
+  id: '/noticias/$id/editar',
+  path: '/noticias/$id/editar',
+  getParentRoute: () => AdminRouteRoute,
+} as any)
+const AppProtectedNoticiasIndexRoute =
+  AppProtectedNoticiasIndexRouteImport.update({
+    id: '/noticias/',
+    path: '/noticias/',
+    getParentRoute: () => AppProtectedRouteRoute,
+  } as any)
+const AppProtectedNoticiasSlugRoute =
+  AppProtectedNoticiasSlugRouteImport.update({
+    id: '/noticias/$slug',
+    path: '/noticias/$slug',
+    getParentRoute: () => AppProtectedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteRouteWithChildren
+  '/app': typeof AppRouteRouteWithChildren
+  '/checkout': typeof CheckoutRoute
+  '/oferta': typeof OfertaRoute
+  '/quiz': typeof QuizRoute
+  '/admin/assinaturas': typeof AdminAssinaturasRoute
+  '/admin/categorias': typeof AdminCategoriasRoute
+  '/admin/configuracoes': typeof AdminConfiguracoesRoute
+  '/admin/notificacoes': typeof AdminNotificacoesRoute
+  '/admin/usuarios': typeof AdminUsuariosRoute
+  '/app/cadastro': typeof AppCadastroRoute
+  '/app/login': typeof AppLoginRoute
+  '/app/recuperar-acesso': typeof AppRecuperarAcessoRoute
+  '/app/redefinir-senha': typeof AppRedefinirSenhaRoute
+  '/admin/': typeof AdminIndexRoute
+  '/admin/noticias/nova': typeof AdminNoticiasNovaRoute
+  '/app/minha-conta': typeof AppProtectedMinhaContaRoute
+  '/app/notificacoes': typeof AppProtectedNotificacoesRoute
+  '/admin/noticias/': typeof AdminNoticiasIndexRoute
+  '/app/': typeof AppProtectedIndexRoute
+  '/admin/noticias/$id/editar': typeof AdminNoticiasIdEditarRoute
+  '/app/noticias/$slug': typeof AppProtectedNoticiasSlugRoute
+  '/app/noticias/': typeof AppProtectedNoticiasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/app': typeof AppProtectedIndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/oferta': typeof OfertaRoute
+  '/quiz': typeof QuizRoute
+  '/admin/assinaturas': typeof AdminAssinaturasRoute
+  '/admin/categorias': typeof AdminCategoriasRoute
+  '/admin/configuracoes': typeof AdminConfiguracoesRoute
+  '/admin/notificacoes': typeof AdminNotificacoesRoute
+  '/admin/usuarios': typeof AdminUsuariosRoute
+  '/app/cadastro': typeof AppCadastroRoute
+  '/app/login': typeof AppLoginRoute
+  '/app/recuperar-acesso': typeof AppRecuperarAcessoRoute
+  '/app/redefinir-senha': typeof AppRedefinirSenhaRoute
+  '/admin': typeof AdminIndexRoute
+  '/admin/noticias/nova': typeof AdminNoticiasNovaRoute
+  '/app/minha-conta': typeof AppProtectedMinhaContaRoute
+  '/app/notificacoes': typeof AppProtectedNotificacoesRoute
+  '/admin/noticias': typeof AdminNoticiasIndexRoute
+  '/admin/noticias/$id/editar': typeof AdminNoticiasIdEditarRoute
+  '/app/noticias/$slug': typeof AppProtectedNoticiasSlugRoute
+  '/app/noticias': typeof AppProtectedNoticiasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteRouteWithChildren
+  '/app': typeof AppRouteRouteWithChildren
+  '/checkout': typeof CheckoutRoute
+  '/oferta': typeof OfertaRoute
+  '/quiz': typeof QuizRoute
+  '/app/_protected': typeof AppProtectedRouteRouteWithChildren
+  '/admin/assinaturas': typeof AdminAssinaturasRoute
+  '/admin/categorias': typeof AdminCategoriasRoute
+  '/admin/configuracoes': typeof AdminConfiguracoesRoute
+  '/admin/notificacoes': typeof AdminNotificacoesRoute
+  '/admin/usuarios': typeof AdminUsuariosRoute
+  '/app/cadastro': typeof AppCadastroRoute
+  '/app/login': typeof AppLoginRoute
+  '/app/recuperar-acesso': typeof AppRecuperarAcessoRoute
+  '/app/redefinir-senha': typeof AppRedefinirSenhaRoute
+  '/admin/': typeof AdminIndexRoute
+  '/admin/noticias/nova': typeof AdminNoticiasNovaRoute
+  '/app/_protected/minha-conta': typeof AppProtectedMinhaContaRoute
+  '/app/_protected/notificacoes': typeof AppProtectedNotificacoesRoute
+  '/admin/noticias/': typeof AdminNoticiasIndexRoute
+  '/app/_protected/': typeof AppProtectedIndexRoute
+  '/admin/noticias/$id/editar': typeof AdminNoticiasIdEditarRoute
+  '/app/_protected/noticias/$slug': typeof AppProtectedNoticiasSlugRoute
+  '/app/_protected/noticias/': typeof AppProtectedNoticiasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/app'
+    | '/checkout'
+    | '/oferta'
+    | '/quiz'
+    | '/admin/assinaturas'
+    | '/admin/categorias'
+    | '/admin/configuracoes'
+    | '/admin/notificacoes'
+    | '/admin/usuarios'
+    | '/app/cadastro'
+    | '/app/login'
+    | '/app/recuperar-acesso'
+    | '/app/redefinir-senha'
+    | '/admin/'
+    | '/admin/noticias/nova'
+    | '/app/minha-conta'
+    | '/app/notificacoes'
+    | '/admin/noticias/'
+    | '/app/'
+    | '/admin/noticias/$id/editar'
+    | '/app/noticias/$slug'
+    | '/app/noticias/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/app'
+    | '/checkout'
+    | '/oferta'
+    | '/quiz'
+    | '/admin/assinaturas'
+    | '/admin/categorias'
+    | '/admin/configuracoes'
+    | '/admin/notificacoes'
+    | '/admin/usuarios'
+    | '/app/cadastro'
+    | '/app/login'
+    | '/app/recuperar-acesso'
+    | '/app/redefinir-senha'
+    | '/admin'
+    | '/admin/noticias/nova'
+    | '/app/minha-conta'
+    | '/app/notificacoes'
+    | '/admin/noticias'
+    | '/admin/noticias/$id/editar'
+    | '/app/noticias/$slug'
+    | '/app/noticias'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/app'
+    | '/checkout'
+    | '/oferta'
+    | '/quiz'
+    | '/app/_protected'
+    | '/admin/assinaturas'
+    | '/admin/categorias'
+    | '/admin/configuracoes'
+    | '/admin/notificacoes'
+    | '/admin/usuarios'
+    | '/app/cadastro'
+    | '/app/login'
+    | '/app/recuperar-acesso'
+    | '/app/redefinir-senha'
+    | '/admin/'
+    | '/admin/noticias/nova'
+    | '/app/_protected/minha-conta'
+    | '/app/_protected/notificacoes'
+    | '/admin/noticias/'
+    | '/app/_protected/'
+    | '/admin/noticias/$id/editar'
+    | '/app/_protected/noticias/$slug'
+    | '/app/_protected/noticias/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRouteRoute: typeof AdminRouteRouteWithChildren
+  AppRouteRoute: typeof AppRouteRouteWithChildren
+  CheckoutRoute: typeof CheckoutRoute
+  OfertaRoute: typeof OfertaRoute
+  QuizRoute: typeof QuizRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +339,251 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/oferta': {
+      id: '/oferta'
+      path: '/oferta'
+      fullPath: '/oferta'
+      preLoaderRoute: typeof OfertaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/assinaturas': {
+      id: '/admin/assinaturas'
+      path: '/assinaturas'
+      fullPath: '/admin/assinaturas'
+      preLoaderRoute: typeof AdminAssinaturasRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/categorias': {
+      id: '/admin/categorias'
+      path: '/categorias'
+      fullPath: '/admin/categorias'
+      preLoaderRoute: typeof AdminCategoriasRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/configuracoes': {
+      id: '/admin/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/admin/configuracoes'
+      preLoaderRoute: typeof AdminConfiguracoesRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/notificacoes': {
+      id: '/admin/notificacoes'
+      path: '/notificacoes'
+      fullPath: '/admin/notificacoes'
+      preLoaderRoute: typeof AdminNotificacoesRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/usuarios': {
+      id: '/admin/usuarios'
+      path: '/usuarios'
+      fullPath: '/admin/usuarios'
+      preLoaderRoute: typeof AdminUsuariosRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/app/_protected': {
+      id: '/app/_protected'
+      path: ''
+      fullPath: '/app'
+      preLoaderRoute: typeof AppProtectedRouteRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/cadastro': {
+      id: '/app/cadastro'
+      path: '/cadastro'
+      fullPath: '/app/cadastro'
+      preLoaderRoute: typeof AppCadastroRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/login': {
+      id: '/app/login'
+      path: '/login'
+      fullPath: '/app/login'
+      preLoaderRoute: typeof AppLoginRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/recuperar-acesso': {
+      id: '/app/recuperar-acesso'
+      path: '/recuperar-acesso'
+      fullPath: '/app/recuperar-acesso'
+      preLoaderRoute: typeof AppRecuperarAcessoRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/app/redefinir-senha': {
+      id: '/app/redefinir-senha'
+      path: '/redefinir-senha'
+      fullPath: '/app/redefinir-senha'
+      preLoaderRoute: typeof AppRedefinirSenhaRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/admin/noticias/': {
+      id: '/admin/noticias/'
+      path: '/noticias'
+      fullPath: '/admin/noticias/'
+      preLoaderRoute: typeof AdminNoticiasIndexRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/admin/noticias/nova': {
+      id: '/admin/noticias/nova'
+      path: '/noticias/nova'
+      fullPath: '/admin/noticias/nova'
+      preLoaderRoute: typeof AdminNoticiasNovaRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/app/_protected/': {
+      id: '/app/_protected/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppProtectedIndexRouteImport
+      parentRoute: typeof AppProtectedRouteRoute
+    }
+    '/app/_protected/minha-conta': {
+      id: '/app/_protected/minha-conta'
+      path: '/minha-conta'
+      fullPath: '/app/minha-conta'
+      preLoaderRoute: typeof AppProtectedMinhaContaRouteImport
+      parentRoute: typeof AppProtectedRouteRoute
+    }
+    '/app/_protected/notificacoes': {
+      id: '/app/_protected/notificacoes'
+      path: '/notificacoes'
+      fullPath: '/app/notificacoes'
+      preLoaderRoute: typeof AppProtectedNotificacoesRouteImport
+      parentRoute: typeof AppProtectedRouteRoute
+    }
+    '/admin/noticias/$id/editar': {
+      id: '/admin/noticias/$id/editar'
+      path: '/noticias/$id/editar'
+      fullPath: '/admin/noticias/$id/editar'
+      preLoaderRoute: typeof AdminNoticiasIdEditarRouteImport
+      parentRoute: typeof AdminRouteRoute
+    }
+    '/app/_protected/noticias/': {
+      id: '/app/_protected/noticias/'
+      path: '/noticias'
+      fullPath: '/app/noticias/'
+      preLoaderRoute: typeof AppProtectedNoticiasIndexRouteImport
+      parentRoute: typeof AppProtectedRouteRoute
+    }
+    '/app/_protected/noticias/$slug': {
+      id: '/app/_protected/noticias/$slug'
+      path: '/noticias/$slug'
+      fullPath: '/app/noticias/$slug'
+      preLoaderRoute: typeof AppProtectedNoticiasSlugRouteImport
+      parentRoute: typeof AppProtectedRouteRoute
+    }
   }
 }
 
+interface AdminRouteRouteChildren {
+  AdminAssinaturasRoute: typeof AdminAssinaturasRoute
+  AdminCategoriasRoute: typeof AdminCategoriasRoute
+  AdminConfiguracoesRoute: typeof AdminConfiguracoesRoute
+  AdminNotificacoesRoute: typeof AdminNotificacoesRoute
+  AdminUsuariosRoute: typeof AdminUsuariosRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  AdminNoticiasNovaRoute: typeof AdminNoticiasNovaRoute
+  AdminNoticiasIndexRoute: typeof AdminNoticiasIndexRoute
+  AdminNoticiasIdEditarRoute: typeof AdminNoticiasIdEditarRoute
+}
+
+const AdminRouteRouteChildren: AdminRouteRouteChildren = {
+  AdminAssinaturasRoute: AdminAssinaturasRoute,
+  AdminCategoriasRoute: AdminCategoriasRoute,
+  AdminConfiguracoesRoute: AdminConfiguracoesRoute,
+  AdminNotificacoesRoute: AdminNotificacoesRoute,
+  AdminUsuariosRoute: AdminUsuariosRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  AdminNoticiasNovaRoute: AdminNoticiasNovaRoute,
+  AdminNoticiasIndexRoute: AdminNoticiasIndexRoute,
+  AdminNoticiasIdEditarRoute: AdminNoticiasIdEditarRoute,
+}
+
+const AdminRouteRouteWithChildren = AdminRouteRoute._addFileChildren(
+  AdminRouteRouteChildren,
+)
+
+interface AppProtectedRouteRouteChildren {
+  AppProtectedMinhaContaRoute: typeof AppProtectedMinhaContaRoute
+  AppProtectedNotificacoesRoute: typeof AppProtectedNotificacoesRoute
+  AppProtectedIndexRoute: typeof AppProtectedIndexRoute
+  AppProtectedNoticiasSlugRoute: typeof AppProtectedNoticiasSlugRoute
+  AppProtectedNoticiasIndexRoute: typeof AppProtectedNoticiasIndexRoute
+}
+
+const AppProtectedRouteRouteChildren: AppProtectedRouteRouteChildren = {
+  AppProtectedMinhaContaRoute: AppProtectedMinhaContaRoute,
+  AppProtectedNotificacoesRoute: AppProtectedNotificacoesRoute,
+  AppProtectedIndexRoute: AppProtectedIndexRoute,
+  AppProtectedNoticiasSlugRoute: AppProtectedNoticiasSlugRoute,
+  AppProtectedNoticiasIndexRoute: AppProtectedNoticiasIndexRoute,
+}
+
+const AppProtectedRouteRouteWithChildren =
+  AppProtectedRouteRoute._addFileChildren(AppProtectedRouteRouteChildren)
+
+interface AppRouteRouteChildren {
+  AppProtectedRouteRoute: typeof AppProtectedRouteRouteWithChildren
+  AppCadastroRoute: typeof AppCadastroRoute
+  AppLoginRoute: typeof AppLoginRoute
+  AppRecuperarAcessoRoute: typeof AppRecuperarAcessoRoute
+  AppRedefinirSenhaRoute: typeof AppRedefinirSenhaRoute
+}
+
+const AppRouteRouteChildren: AppRouteRouteChildren = {
+  AppProtectedRouteRoute: AppProtectedRouteRouteWithChildren,
+  AppCadastroRoute: AppCadastroRoute,
+  AppLoginRoute: AppLoginRoute,
+  AppRecuperarAcessoRoute: AppRecuperarAcessoRoute,
+  AppRedefinirSenhaRoute: AppRedefinirSenhaRoute,
+}
+
+const AppRouteRouteWithChildren = AppRouteRoute._addFileChildren(
+  AppRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRouteRoute: AdminRouteRouteWithChildren,
+  AppRouteRoute: AppRouteRouteWithChildren,
+  CheckoutRoute: CheckoutRoute,
+  OfertaRoute: OfertaRoute,
+  QuizRoute: QuizRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
