@@ -1,9 +1,11 @@
 import { AccessGate } from "@/components/app/AccessGate";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowLeft, CalendarDays, Headphones, Newspaper } from "lucide-react";
+import { ArrowLeft, CalendarDays, Newspaper } from "lucide-react";
 import { formatDate, getPublishedArticleBySlug } from "@/lib/articles";
 import { CategoryTag } from "@/components/app/news";
+import { ArticleAudioPlayer } from "@/components/app/ArticleAudioPlayer";
+
 
 export const Route = createFileRoute("/app/_protected/noticias/$slug")({
   head: () => ({
