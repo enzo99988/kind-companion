@@ -42,17 +42,6 @@ function narrationText(article: {
     .join("\n\n");
 }
 
-async function assertAdmin(context: {
-  supabase: { rpc: (fn: string, args: unknown) => Promise<{ data: unknown }> };
-  userId: string;
-}) {
-  const { data } = await context.supabase.rpc("has_role", {
-    _user_id: context.userId,
-    _role: "admin",
-  });
-  if (data !== true) throw new Error("Acesso restrito a administradores.");
-}
-
 /* ------------------------- geração (administrador) ------------------------ */
 
 export const generateArticleAudio = createServerFn({ method: "POST" })
@@ -276,5 +265,3 @@ export const getArticleAudioUrl = createServerFn({ method: "POST" })
     }
     return { status: "ready" as const, url: signed.signedUrl };
   });
-
-export { assertAdmin };
