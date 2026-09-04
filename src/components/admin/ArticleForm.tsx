@@ -34,6 +34,9 @@ export function ArticleForm({
   const [sources, setSources] = useState(initial?.sources ?? "");
   const [featured, setFeatured] = useState(initial?.featured ?? false);
   const [notify, setNotify] = useState(initial?.send_as_notification ?? false);
+  const [audioEnabled, setAudioEnabled] = useState(
+    initial?.audio_enabled ?? false,
+  );
   const [publishedAt, setPublishedAt] = useState(
     initial?.published_at ? initial.published_at.slice(0, 10) : "",
   );
@@ -74,6 +77,7 @@ export function ArticleForm({
         status,
         featured,
         send_as_notification: notify,
+        audio_enabled: audioEnabled,
         published_at: publishedAt
           ? new Date(`${publishedAt}T12:00:00`).toISOString()
           : null,
@@ -224,6 +228,21 @@ export function ArticleForm({
               <span className="mt-1 block text-xs text-muted-foreground">
                 Apenas uma notícia fica em destaque: a anterior perde o destaque
                 automaticamente.
+              </span>
+            </span>
+          </label>
+          <label className="flex cursor-pointer items-start gap-3 text-sm">
+            <input
+              type="checkbox"
+              checked={audioEnabled}
+              onChange={(e) => setAudioEnabled(e.target.checked)}
+              className="mt-0.5 h-4 w-4 accent-[color:var(--gold)]"
+            />
+            <span>
+              <span className="font-semibold">Disponibilizar áudio</span>
+              <span className="mt-1 block text-xs text-muted-foreground">
+                Permite gerar a narração em voz de IA para esta notícia. Desmarque
+                para deixá-la sem áudio.
               </span>
             </span>
           </label>

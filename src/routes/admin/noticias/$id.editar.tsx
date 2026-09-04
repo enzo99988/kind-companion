@@ -10,6 +10,7 @@ import {
 } from "@/lib/articles";
 import { ArticleForm } from "@/components/admin/ArticleForm";
 import { AdminPageHeader } from "@/components/admin/AdminShell";
+import { ArticleAudioPanel } from "@/components/admin/ArticleAudioPanel";
 
 export const Route = createFileRoute("/admin/noticias/$id/editar")({
   head: () => ({
@@ -110,9 +111,18 @@ function EditarNoticia() {
           status: article.status,
           featured: article.featured,
           send_as_notification: article.send_as_notification,
+          audio_enabled: article.audio_enabled,
           published_at: article.published_at,
         }}
       />
+      <div className="max-w-md">
+        <ArticleAudioPanel
+          articleId={article.id}
+          status={article.audio_status}
+          generatedAt={article.audio_generated_at}
+          audioError={article.audio_error}
+        />
+      </div>
     </div>
   );
 }

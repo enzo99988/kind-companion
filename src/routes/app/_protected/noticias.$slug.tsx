@@ -1,9 +1,11 @@
 import { AccessGate } from "@/components/app/AccessGate";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowLeft, CalendarDays, Headphones, Newspaper } from "lucide-react";
+import { ArrowLeft, CalendarDays, Newspaper } from "lucide-react";
 import { formatDate, getPublishedArticleBySlug } from "@/lib/articles";
 import { CategoryTag } from "@/components/app/news";
+import { ArticleAudioPlayer } from "@/components/app/ArticleAudioPlayer";
+
 
 export const Route = createFileRoute("/app/_protected/noticias/$slug")({
   head: () => ({
@@ -110,17 +112,8 @@ function LeituraPage() {
         {article.author_name && <span>{article.author_name}</span>}
       </div>
 
-      <button
-        type="button"
-        disabled
-        className="press mt-6 inline-flex w-full items-center justify-center gap-2 rounded-sm border border-[color:var(--gold)]/60 bg-[color:var(--gold)]/12 px-6 py-3.5 text-[0.68rem] font-bold tracking-[0.16em] text-[color:var(--gold-ink)] uppercase disabled:cursor-not-allowed sm:w-auto"
-      >
-        <Headphones className="h-4 w-4" />
-        Ouvir notícia
-      </button>
-      <span className="mt-2 text-xs leading-relaxed text-muted-foreground">
-        A leitura em áudio será ativada em uma próxima etapa.
-      </span>
+      <ArticleAudioPlayer slug={slug} />
+
 
       <div className="mt-8 overflow-hidden rounded-lg border border-border">
         {article.cover_image_url ? (

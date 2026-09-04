@@ -159,6 +159,7 @@ export type ArticleFormValues = {
   status: ArticleStatus;
   featured: boolean;
   send_as_notification: boolean;
+  audio_enabled: boolean;
   published_at: string | null;
 };
 
