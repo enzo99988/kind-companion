@@ -16,6 +16,12 @@ export type Database = {
     Tables: {
       articles: {
         Row: {
+          audio_enabled: boolean
+          audio_error: string | null
+          audio_generated_at: string | null
+          audio_path: string | null
+          audio_status: string
+          audio_url: string | null
           author_id: string | null
           author_name: string | null
           category_id: string | null
@@ -34,6 +40,12 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          audio_enabled?: boolean
+          audio_error?: string | null
+          audio_generated_at?: string | null
+          audio_path?: string | null
+          audio_status?: string
+          audio_url?: string | null
           author_id?: string | null
           author_name?: string | null
           category_id?: string | null
@@ -52,6 +64,12 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          audio_enabled?: boolean
+          audio_error?: string | null
+          audio_generated_at?: string | null
+          audio_path?: string | null
+          audio_status?: string
+          audio_url?: string | null
           author_id?: string | null
           author_name?: string | null
           category_id?: string | null
