@@ -1,6 +1,7 @@
-import { ArrowRight, Camera } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
+import heroPhoto from "@/assets/home/exercito.jpg";
 
 
 export function Hero() {
