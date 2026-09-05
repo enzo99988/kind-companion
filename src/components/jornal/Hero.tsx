@@ -87,13 +87,13 @@ export function Hero() {
             className="absolute -inset-2 rounded-[50%] bg-[conic-gradient(from_140deg,color-mix(in_oklab,var(--gold)_45%,transparent),transparent_35%,color-mix(in_oklab,var(--verde)_45%,transparent),transparent_75%)] opacity-45 blur-[3px]"
           />
           <div
-            className="relative grid aspect-square place-items-center overflow-hidden rounded-[50%] border border-border bg-[linear-gradient(165deg,var(--navy-soft),var(--navy-deep))] p-4"
+            className="relative aspect-[4/5] overflow-hidden rounded-[50%] border border-border bg-[linear-gradient(165deg,var(--navy-soft),var(--navy-deep))]"
             style={{ boxShadow: "var(--shadow-editorial)" }}
           >
             <img
               src={heroPhoto}
               alt="Militares do Exército Brasileiro em formação diante da bandeira do Brasil"
-              className="max-h-full w-full object-contain"
+              className="h-full w-full object-cover"
             />
             <div
               aria-hidden
