@@ -92,8 +92,8 @@ export function Hero() {
           >
             <img
               src={heroPhoto}
-              alt="Militares do Exército Brasileiro em formação diante da bandeira do Brasil"
-              className="h-full w-full object-contain object-center p-4 sm:p-6"
+              alt="Emblema do Exército Brasileiro"
+              className="h-full w-full object-contain object-center p-8 sm:p-10"
             />
             <div
               aria-hidden
