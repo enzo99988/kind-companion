@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 export function OfferFooter() {
   return (
@@ -6,9 +7,7 @@ export function OfferFooter() {
       <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <Link to="/" className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-sm border border-primary/50 font-display text-lg text-primary">
-              J
-            </span>
+            <BrandLogo className="h-10 w-10" />
             <span className="font-display text-xl tracking-tight">
               JORNAL DA PÁTRIA
             </span>

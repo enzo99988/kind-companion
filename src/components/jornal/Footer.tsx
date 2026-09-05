@@ -1,4 +1,5 @@
 import { Instagram } from "lucide-react";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 const LINKS = [
   { label: "Início", href: "#inicio" },
@@ -16,9 +17,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_0.8fr]">
           <div>
             <div className="flex min-w-0 items-center gap-3">
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-sm border border-primary/50 font-display text-lg text-primary">
-                J
-              </span>
+              <BrandLogo className="h-10 w-10" />
               <span className="font-display text-xl tracking-tight">
                 JORNAL DA PÁTRIA
               </span>

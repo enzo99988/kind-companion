@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 export function AuthLayout({
   title,
@@ -18,9 +19,7 @@ export function AuthLayout({
       <div className="flex flex-1 items-center justify-center px-4 py-12 sm:px-6 sm:py-16">
         <div className="w-full max-w-md">
           <Link to="/" className="flex flex-col items-center gap-3 text-center">
-            <span className="grid h-12 w-12 place-items-center rounded-sm bg-primary font-display text-xl text-primary-foreground">
-              J
-            </span>
+            <BrandLogo variant="accent" className="h-12 w-12" />
             <span className="font-display text-xl tracking-tight sm:text-2xl">
               JORNAL DA PÁTRIA
             </span>

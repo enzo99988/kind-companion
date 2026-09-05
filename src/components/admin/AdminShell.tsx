@@ -16,6 +16,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 const NAV = [
   { to: "/admin" as const, label: "Dashboard", icon: LayoutDashboard, exact: true },
@@ -69,9 +70,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
       {/* Sidebar desktop */}
       <aside className="hidden bg-[color:var(--navy)] lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col">
         <div className="flex items-center gap-3 border-b border-white/10 px-5 py-5">
-          <span className="grid h-10 w-10 place-items-center rounded-sm bg-[color:var(--gold)] font-display text-lg text-[color:var(--navy)]">
-            J
-          </span>
+          <BrandLogo variant="accent" className="h-10 w-10" />
           <span>
             <span className="block font-display text-sm leading-none tracking-tight text-white">
               JORNAL DA PÁTRIA
@@ -105,9 +104,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
       <div className="flex flex-col">
         <header className="sticky top-0 z-40 flex items-center justify-between gap-3 bg-[color:var(--navy)] px-4 py-3 lg:hidden">
           <Link to="/admin" className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-sm bg-[color:var(--gold)] font-display text-[color:var(--navy)]">
-              J
-            </span>
+            <BrandLogo variant="accent" className="h-9 w-9" />
             <span className="text-[0.6rem] font-bold tracking-[0.2em] text-white uppercase">
               Painel editorial
             </span>
