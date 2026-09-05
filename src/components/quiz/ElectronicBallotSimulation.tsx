@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, Camera, Check, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
+import flavioPhoto from "@/assets/figures/flavio-bolsonaro.jpg";
 
 const KEYS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
@@ -86,8 +87,16 @@ export function ElectronicBallotSimulation({
                   </p>
                 )}
               </div>
-              <div className="grid h-20 w-16 shrink-0 place-items-center rounded-sm border border-border bg-navy/70 text-muted-foreground">
-                <Camera className="h-4 w-4" />
+              <div className="grid h-20 w-16 shrink-0 place-items-center overflow-hidden rounded-sm border border-border bg-navy/70 text-muted-foreground">
+                {digits === "22" ? (
+                  <img
+                    src={flavioPhoto}
+                    alt="Foto do candidato da simulação"
+                    className="h-full w-full animate-fade-in object-cover object-top"
+                  />
+                ) : (
+                  <Camera className="h-4 w-4" />
+                )}
               </div>
             </div>
           </div>
