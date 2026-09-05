@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
-import heroPhoto from "@/assets/home/exercito.jpg";
+import heroPhoto from "@/assets/home/exercito-emblema.png";
 
 
 export function Hero() {
