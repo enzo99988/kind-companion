@@ -5,6 +5,7 @@ import { Home, Newspaper, Bell, User, LogOut, ShieldCheck } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { isCurrentUserAdmin } from "@/lib/articles";
 import { countUnreadNotifications } from "@/lib/notifications";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 const NAV = [
   { to: "/app" as const, label: "Início", icon: Home },
@@ -42,9 +43,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-40 border-b border-border bg-background/92 backdrop-blur-xl">
         <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <Link to="/app" className="flex min-w-0 items-center gap-3">
-            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-sm bg-primary font-display text-lg text-primary-foreground">
-              J
-            </span>
+            <BrandLogo variant="accent" className="h-10 w-10" />
             <span className="min-w-0">
               <span className="block truncate font-display text-base leading-none tracking-tight sm:text-lg">
                 JORNAL DA PÁTRIA

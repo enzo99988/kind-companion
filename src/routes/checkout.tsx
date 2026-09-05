@@ -6,6 +6,7 @@ import {
   resolvePlan,
   type CheckoutPlanId,
 } from "@/lib/checkout-config";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 export const Route = createFileRoute("/checkout")({
   validateSearch: (search: Record<string, unknown>) => ({
@@ -41,8 +42,11 @@ function Checkout() {
     <div className="app-theme min-h-screen">
       <header className="border-b border-border bg-card">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-5 lg:px-8">
-          <Link to="/oferta" className="font-display text-lg tracking-tight text-foreground">
-            JORNAL DA PÁTRIA
+          <Link to="/oferta" className="flex items-center gap-3">
+            <BrandLogo className="h-9 w-9" />
+            <span className="font-display text-lg tracking-tight text-foreground">
+              JORNAL DA PÁTRIA
+            </span>
           </Link>
           <span className="inline-flex items-center gap-2 text-[0.65rem] font-semibold tracking-[0.14em] text-muted-foreground uppercase">
             <Lock className="h-3.5 w-3.5 text-accent" />

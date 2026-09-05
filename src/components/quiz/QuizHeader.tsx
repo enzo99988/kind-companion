@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ProgressBar } from "./ProgressBar";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 export function QuizHeader({
   label,
@@ -14,9 +15,7 @@ export function QuizHeader({
       <div className="mx-auto max-w-4xl px-5 py-3 sm:py-4 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           <Link to="/" className="flex min-w-0 items-center gap-2">
-            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-sm border border-primary/50 font-display text-sm text-primary">
-              J
-            </span>
+            <BrandLogo className="h-8 w-8" />
             <span className="truncate font-display text-sm tracking-tight sm:text-base">
               QUIZ DA PÁTRIA
             </span>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 const NAV = [
   { label: "Início", href: "#inicio" },
@@ -54,9 +55,7 @@ export function Header() {
       <div className="h-0.5 w-full gold-rule opacity-80" />
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 lg:px-8">
         <a href="#inicio" className="group flex min-w-0 items-center gap-3">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-sm border border-primary/50 bg-navy font-display text-lg text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-            J
-          </span>
+          <BrandLogo className="h-10 w-10" />
           <span className="min-w-0">
             <span className="block truncate font-display text-lg leading-none tracking-tight sm:text-xl">
               JORNAL DA PÁTRIA
