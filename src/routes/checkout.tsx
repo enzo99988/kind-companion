@@ -6,6 +6,7 @@ import {
   resolvePlan,
   type CheckoutPlanId,
 } from "@/lib/checkout-config";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 export const Route = createFileRoute("/checkout")({
   validateSearch: (search: Record<string, unknown>) => ({
