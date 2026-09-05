@@ -1,12 +1,16 @@
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, ImageIcon } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Reveal, SectionHeading } from "./Reveal";
 import { cn } from "@/lib/utils";
+import jairPhoto from "@/assets/figures/jair-bolsonaro.jpg";
+import flavioPhoto from "@/assets/figures/flavio-bolsonaro.jpg";
+import nikolasPhoto from "@/assets/figures/nikolas-ferreira.jpg";
 
 type Figure = {
   name: string;
   category: string;
   bio: string;
+  photo: string;
 };
 
 const FIGURES: Figure[] = [
@@ -14,16 +18,19 @@ const FIGURES: Figure[] = [
     name: "Jair Bolsonaro",
     category: "Presidência da República",
     bio: "Político brasileiro, ex-militar do Exército, deputado federal pelo Rio de Janeiro por sete mandatos e Presidente da República entre 2019 e 2022.",
+    photo: jairPhoto,
   },
   {
     name: "Flávio Bolsonaro",
     category: "Senado Federal",
     bio: "Político brasileiro, senador da República pelo estado do Rio de Janeiro, eleito em 2018 após atuar como deputado estadual no mesmo estado.",
+    photo: flavioPhoto,
   },
   {
     name: "Nikolas Ferreira",
     category: "Câmara dos Deputados",
     bio: "Político brasileiro, deputado federal por Minas Gerais eleito em 2022, tendo exercido anteriormente o mandato de vereador em Belo Horizonte.",
+    photo: nikolasPhoto,
   },
 ];
 
@@ -54,17 +61,12 @@ export function FiguresCarousel() {
           <Reveal className="relative overflow-hidden rounded-lg surface-card card-hover">
             <div className="grid gap-0 sm:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
               <div className="relative min-h-[280px] border-b border-border bg-[linear-gradient(165deg,var(--navy-soft),var(--navy-deep))] sm:min-h-[420px] sm:border-r sm:border-b-0">
-                <div className="absolute inset-0 bg-[radial-gradient(60%_45%_at_50%_15%,color-mix(in_oklab,var(--gold)_14%,transparent),transparent_70%)]" />
-                <div className="absolute inset-0 grid place-items-center px-6 text-center">
-                  <div>
-                    <span className="mx-auto grid h-12 w-12 place-items-center rounded-full border border-primary/40 text-primary">
-                      <ImageIcon className="h-5 w-5" />
-                    </span>
-                    <p className="mt-4 eyebrow text-muted-foreground">
-                      Fotografia a definir
-                    </p>
-                  </div>
-                </div>
+                <img
+                  src={current.photo}
+                  alt={`Foto de ${current.name}`}
+                  className="absolute inset-0 h-full w-full object-cover object-top"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_45%_at_50%_15%,color-mix(in_oklab,var(--gold)_14%,transparent),transparent_70%)]" />
                 <span
                   aria-hidden
                   className="absolute inset-x-0 bottom-0 h-px gold-rule"
@@ -101,10 +103,12 @@ export function FiguresCarousel() {
               onClick={() => go(1)}
               className="group flex h-full w-full flex-col text-left"
             >
-              <span className="relative flex-1 bg-[linear-gradient(165deg,var(--navy-soft),var(--navy-deep))]">
-                <span className="absolute inset-0 grid place-items-center text-muted-foreground transition-colors group-hover:text-primary">
-                  <ImageIcon className="h-6 w-6" />
-                </span>
+              <span className="relative flex-1 overflow-hidden bg-[linear-gradient(165deg,var(--navy-soft),var(--navy-deep))]">
+                <img
+                  src={next.photo}
+                  alt={`Foto de ${next.name}`}
+                  className="absolute inset-0 h-full w-full object-cover object-top opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+                />
               </span>
               <span className="border-t border-border p-6">
                 <span className="eyebrow block text-muted-foreground">
