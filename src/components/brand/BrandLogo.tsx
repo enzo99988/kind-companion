@@ -31,15 +31,15 @@ export function BrandLogo({
     return (
       <span
         className={cn(
-          "relative inline-grid shrink-0 place-items-center rounded-full p-[2px]",
+          "relative inline-grid shrink-0 place-items-center rounded-full p-px",
           className,
         )}
         style={{
           background:
-            "conic-gradient(from 210deg, color-mix(in oklab, var(--verde) 55%, transparent) 0deg, color-mix(in oklab, var(--gold) 60%, transparent) 130deg, color-mix(in oklab, var(--navy) 45%, transparent) 250deg, color-mix(in oklab, var(--verde) 55%, transparent) 360deg)",
+            "conic-gradient(from 210deg, color-mix(in oklab, var(--verde) 38%, transparent) 0deg, color-mix(in oklab, var(--gold) 45%, transparent) 130deg, color-mix(in oklab, var(--navy) 30%, transparent) 250deg, color-mix(in oklab, var(--verde) 38%, transparent) 360deg)",
         }}
       >
-        <span className="grid h-full w-full place-items-center overflow-hidden rounded-full bg-background/80">
+        <span className="grid h-full w-full place-items-center overflow-hidden rounded-full">
           {img}
         </span>
       </span>
