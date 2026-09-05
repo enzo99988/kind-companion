@@ -1,6 +1,7 @@
-import { ArrowRight, Camera } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
+import heroPhoto from "@/assets/home/exercito.jpg";
 
 
 export function Hero() {
@@ -89,20 +90,15 @@ export function Hero() {
             className="relative aspect-[4/5] overflow-hidden rounded-[50%] border border-border bg-[linear-gradient(165deg,var(--navy-soft),var(--navy-deep))]"
             style={{ boxShadow: "var(--shadow-editorial)" }}
           >
-            <div className="absolute inset-0 bg-[radial-gradient(70%_50%_at_50%_10%,color-mix(in_oklab,var(--azul)_30%,transparent),transparent_70%)]" />
-            <div className="absolute inset-0 grid place-items-center px-10 text-center">
-              <div>
-                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-primary/40 text-primary">
-                  <Camera className="h-6 w-6" />
-                </span>
-                <p className="mt-5 eyebrow text-muted-foreground">
-                  Espaço reservado
-                </p>
-                <p className="mt-2 font-display text-lg text-foreground/90">
-                  Fotografia editorial
-                </p>
-              </div>
-            </div>
+            <img
+              src={heroPhoto}
+              alt="Militares do Exército Brasileiro em formação diante da bandeira do Brasil"
+              className="h-full w-full object-cover"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_50%_at_50%_10%,color-mix(in_oklab,var(--azul)_18%,transparent),transparent_70%)]"
+            />
           </div>
           <div className="mt-12 grid grid-cols-3 gap-3 text-center">
             {["Notícias", "Contexto", "Análises"].map((label, i) => (
