@@ -51,7 +51,11 @@ export function QuestionCard({
       </div>
 
       <div className="mt-6">
-        <ImageContainer caption={question.imageCaption} size={question.imageSize} />
+        <ImageContainer
+          caption={question.imageCaption}
+          src={question.image}
+          size={question.imageSize}
+        />
       </div>
 
       <h1 className="mt-7 font-display text-[clamp(1.4rem,4.6vw,2.15rem)] leading-[1.12] tracking-[-0.01em]">
