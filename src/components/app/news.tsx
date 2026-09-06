@@ -97,7 +97,7 @@ export function FeaturedArticle({ article }: { article: ArticleWithCategory }) {
               <CalendarDays className="h-3.5 w-3.5" />
               {formatDate(article.published_at ?? article.created_at)}
             </div>
-            {article.author_name && <div>{article.author_name}</div>}
+            
           </dl>
           <Link
             to="/app/noticias/$slug"
