@@ -1,3 +1,20 @@
+import q1 from "@/assets/quiz/q1.jpg";
+import q2 from "@/assets/quiz/q2.jpg";
+import q3 from "@/assets/quiz/q3.jpg";
+import q4 from "@/assets/quiz/q4.jpg";
+import q5 from "@/assets/quiz/q5.jpg";
+import q6 from "@/assets/quiz/q6.jpg";
+import q7 from "@/assets/quiz/q7.jpg";
+import q8 from "@/assets/quiz/q8.jpg";
+import q9 from "@/assets/quiz/q9.jpg";
+import q10 from "@/assets/quiz/q10.jpg";
+import q11 from "@/assets/quiz/q11.jpg";
+import q12 from "@/assets/quiz/q12.jpg";
+import q13 from "@/assets/quiz/q13.jpg";
+import q14 from "@/assets/quiz/q14.jpg";
+import q15 from "@/assets/quiz/q15.jpg";
+import q16 from "@/assets/quiz/q16.jpg";
+
 export type QuizOption = {
   id: string;
   label: string;
@@ -9,6 +26,7 @@ export type QuizQuestion = {
   theme: string;
   prompt: string;
   imageCaption: string;
+  image: string;
   imageSize?: "default" | "large";
   options: QuizOption[];
   /** only for knowledge questions */
@@ -18,6 +36,7 @@ export type QuizQuestion = {
 export const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: "q1",
+    image: q1,
     kind: "knowledge",
     theme: "Símbolos nacionais",
     prompt: "Quantas estrelas existem hoje na bandeira do Brasil?",
@@ -33,6 +52,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q2",
+    image: q2,
     kind: "knowledge",
     theme: "Constituição",
     prompt: "Em que ano foi promulgada a atual Constituição brasileira?",
@@ -47,6 +67,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q3",
+    image: q3,
     kind: "knowledge",
     theme: "Instituições",
     prompt: "Quantos ministros compõem o Supremo Tribunal Federal?",
@@ -61,6 +82,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q4",
+    image: q4,
     kind: "knowledge",
     theme: "História",
     prompt: "Qual acontecimento marcou o dia 15 de novembro de 1889?",
@@ -75,6 +97,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q5",
+    image: q5,
     kind: "opinion",
     theme: "Percepção",
     prompt: "Na sua opinião, o que o Brasil mais precisa hoje?",
@@ -88,6 +111,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q6",
+    image: q6,
     kind: "knowledge",
     theme: "Conhecimentos cívicos",
     prompt: "Quantos anos dura o mandato de um senador da República?",
@@ -102,6 +126,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q7",
+    image: q7,
     kind: "knowledge",
     theme: "Instituições",
     prompt: "Quem tem a competência de convocar plebiscitos e referendos no Brasil?",
@@ -116,6 +141,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q8",
+    image: q8,
     kind: "knowledge",
     theme: "História",
     prompt: "A Lei Áurea, que aboliu a escravidão no Brasil, foi assinada em:",
@@ -131,6 +157,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q9",
+    image: q9,
     kind: "opinion",
     theme: "Cultura política",
     prompt: "Como você costuma se informar sobre política no Brasil?",
@@ -144,6 +171,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q10",
+    image: q10,
     kind: "knowledge",
     theme: "Símbolos nacionais",
     prompt: "A frase que aparece na bandeira nacional é:",
@@ -158,6 +186,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q11",
+    image: q11,
     kind: "knowledge",
     theme: "Eleições",
     prompt: "A partir de qual idade o voto passa a ser obrigatório no Brasil?",
@@ -172,6 +201,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q12",
+    image: q12,
     kind: "knowledge",
     theme: "Instituições",
     prompt: "Qual órgão organiza e fiscaliza as eleições no país?",
@@ -186,6 +216,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q13",
+    image: q13,
     kind: "opinion",
     theme: "Percepção",
     prompt: "Você sente que os acontecimentos públicos são bem explicados pela imprensa?",
@@ -199,6 +230,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q14",
+    image: q14,
     kind: "knowledge",
     theme: "História recente",
     prompt: "O Plano Real, que criou a moeda atual do Brasil, foi implantado em:",
@@ -213,6 +245,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q15",
+    image: q15,
     kind: "knowledge",
     theme: "Conhecimentos cívicos",
     prompt: "Quantos são os Poderes da República segundo a Constituição?",
@@ -227,6 +260,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: "q16",
+    image: q16,
     kind: "opinion",
     theme: "Cultura política",
     prompt: "O que mais te faz acompanhar uma notícia até o fim?",
