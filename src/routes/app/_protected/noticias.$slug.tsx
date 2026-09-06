@@ -109,7 +109,7 @@ function LeituraPage() {
           <CalendarDays className="h-3.5 w-3.5" />
           {formatDate(article.published_at ?? article.created_at)}
         </span>
-        {article.author_name && <span>{article.author_name}</span>}
+        
       </div>
 
       <ArticleAudioPlayer slug={slug} />
