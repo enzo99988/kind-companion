@@ -96,20 +96,32 @@ export function Testimonials() {
               <article className="group h-full rounded-md surface-card card-hover p-8 sm:p-9">
                 <Quote className="h-6 w-6 text-primary/70" />
                 <p className="mt-5 font-display text-lg leading-snug text-foreground/80">
-                  [Espaço para depoimento — texto a ser inserido]
+                  “{slot.quote}”
                 </p>
-                <div className="mt-6 flex items-center gap-1" aria-label="Espaço para avaliação">
+                <div className="mt-6 flex items-center gap-1" aria-label={`Avaliação ${slot.rating} de 5`}>
                   {Array.from({ length: 5 }).map((_, k) => (
-                    <Star key={k} className="h-4 w-4 text-primary/40" />
+                    <Star
+                      key={k}
+                      className={
+                        k < slot.rating
+                          ? "h-4 w-4 fill-primary text-primary"
+                          : "h-4 w-4 text-primary/30"
+                      }
+                    />
                   ))}
                   <span className="ml-2 text-[0.62rem] font-semibold tracking-[0.16em] text-muted-foreground uppercase">
-                    Avaliação
+                    {slot.rating}.0
                   </span>
                 </div>
                 <div className="mt-7 grid grid-cols-[auto_minmax(0,1fr)] items-center gap-4 border-t border-border pt-6">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-border bg-navy text-muted-foreground">
-                    <User className="h-4 w-4" />
-                  </span>
+                  <img
+                    src={slot.photo}
+                    alt={`Foto de ${slot.name}, leitor do Jornal da Pátria`}
+                    loading="lazy"
+                    width={512}
+                    height={512}
+                    className="h-11 w-11 shrink-0 rounded-full border border-border object-cover"
+                  />
                   <span className="min-w-0">
                     <span className="block truncate text-sm font-semibold">
                       {slot.name}
@@ -119,6 +131,7 @@ export function Testimonials() {
                     </span>
                   </span>
                 </div>
+
               </article>
             </Reveal>
           ))}
