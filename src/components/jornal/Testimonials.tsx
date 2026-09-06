@@ -45,7 +45,7 @@ export function Testimonials() {
         <SectionHeading
           eyebrow="Leitores"
           title="O QUE OS LEITORES ESTÃO DIZENDO"
-          description="Espaços preparados para receber depoimentos reais de leitores."
+          description="Depoimentos de leitores que acompanham o Jornal da Pátria todos os dias."
         />
 
         {/* Prova social — número real a ser preenchido quando confirmado */}
