@@ -1,11 +1,39 @@
-import { Star, User, Quote } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 import { Reveal, SectionHeading } from "./Reveal";
+import leitor1 from "@/assets/testimonials/leitor-1.jpg";
+import leitor2 from "@/assets/testimonials/leitor-2.jpg";
+import leitor3 from "@/assets/testimonials/leitor-3.jpg";
 
 const SLOTS = [
-  { id: 1, name: "[Nome do leitor]", role: "[Cidade / Estado]" },
-  { id: 2, name: "[Nome do leitor]", role: "[Cidade / Estado]" },
-  { id: 3, name: "[Nome do leitor]", role: "[Cidade / Estado]" },
+  {
+    id: 1,
+    name: "Carlos Menezes",
+    role: "Belo Horizonte / MG",
+    photo: leitor1,
+    rating: 5,
+    quote:
+      "Finalmente um jornal que vai direto ao ponto. Leio todas as manhãs e me sinto muito mais informado sobre o que realmente acontece no país.",
+  },
+  {
+    id: 2,
+    name: "Patrícia Almeida",
+    role: "Curitiba / PR",
+    photo: leitor2,
+    rating: 5,
+    quote:
+      "O áudio das notícias mudou minha rotina. Escuto no trânsito e chego no trabalho já sabendo de tudo. Vale cada centavo.",
+  },
+  {
+    id: 3,
+    name: "Rafael Santiago",
+    role: "Recife / PE",
+    photo: leitor3,
+    rating: 5,
+    quote:
+      "Conteúdo sério, sem enrolação e com linguagem clara. É o único noticiário que recomendo para a minha família.",
+  },
 ];
+
 
 export function Testimonials() {
   return (
