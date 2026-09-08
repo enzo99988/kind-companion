@@ -28,6 +28,7 @@ import { Route as AppRecuperarAcessoRouteImport } from './routes/app/recuperar-a
 import { Route as AppRedefinirSenhaRouteImport } from './routes/app/redefinir-senha'
 import { Route as AdminNoticiasIndexRouteImport } from './routes/admin/noticias/index'
 import { Route as AdminNoticiasNovaRouteImport } from './routes/admin/noticias/nova'
+import { Route as ApiPublicKirvanoWebhookRouteImport } from './routes/api/public/kirvano-webhook'
 import { Route as AppProtectedIndexRouteImport } from './routes/app/_protected/index'
 import { Route as AppProtectedMinhaContaRouteImport } from './routes/app/_protected/minha-conta'
 import { Route as AppProtectedNotificacoesRouteImport } from './routes/app/_protected/notificacoes'
@@ -129,6 +130,11 @@ const AdminNoticiasNovaRoute = AdminNoticiasNovaRouteImport.update({
   path: '/noticias/nova',
   getParentRoute: () => AdminRouteRoute,
 } as any)
+const ApiPublicKirvanoWebhookRoute = ApiPublicKirvanoWebhookRouteImport.update({
+  id: '/api/public/kirvano-webhook',
+  path: '/api/public/kirvano-webhook',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppProtectedIndexRoute = AppProtectedIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -181,6 +187,7 @@ export interface FileRoutesByFullPath {
   '/app/redefinir-senha': typeof AppRedefinirSenhaRoute
   '/admin/': typeof AdminIndexRoute
   '/admin/noticias/nova': typeof AdminNoticiasNovaRoute
+  '/api/public/kirvano-webhook': typeof ApiPublicKirvanoWebhookRoute
   '/app/minha-conta': typeof AppProtectedMinhaContaRoute
   '/app/notificacoes': typeof AppProtectedNotificacoesRoute
   '/admin/noticias/': typeof AdminNoticiasIndexRoute
@@ -206,6 +213,7 @@ export interface FileRoutesByTo {
   '/app/redefinir-senha': typeof AppRedefinirSenhaRoute
   '/admin': typeof AdminIndexRoute
   '/admin/noticias/nova': typeof AdminNoticiasNovaRoute
+  '/api/public/kirvano-webhook': typeof ApiPublicKirvanoWebhookRoute
   '/app/minha-conta': typeof AppProtectedMinhaContaRoute
   '/app/notificacoes': typeof AppProtectedNotificacoesRoute
   '/admin/noticias': typeof AdminNoticiasIndexRoute
@@ -233,6 +241,7 @@ export interface FileRoutesById {
   '/app/redefinir-senha': typeof AppRedefinirSenhaRoute
   '/admin/': typeof AdminIndexRoute
   '/admin/noticias/nova': typeof AdminNoticiasNovaRoute
+  '/api/public/kirvano-webhook': typeof ApiPublicKirvanoWebhookRoute
   '/app/_protected/minha-conta': typeof AppProtectedMinhaContaRoute
   '/app/_protected/notificacoes': typeof AppProtectedNotificacoesRoute
   '/admin/noticias/': typeof AdminNoticiasIndexRoute
@@ -261,6 +270,7 @@ export interface FileRouteTypes {
     | '/app/redefinir-senha'
     | '/admin/'
     | '/admin/noticias/nova'
+    | '/api/public/kirvano-webhook'
     | '/app/minha-conta'
     | '/app/notificacoes'
     | '/admin/noticias/'
@@ -286,6 +296,7 @@ export interface FileRouteTypes {
     | '/app/redefinir-senha'
     | '/admin'
     | '/admin/noticias/nova'
+    | '/api/public/kirvano-webhook'
     | '/app/minha-conta'
     | '/app/notificacoes'
     | '/admin/noticias'
@@ -312,6 +323,7 @@ export interface FileRouteTypes {
     | '/app/redefinir-senha'
     | '/admin/'
     | '/admin/noticias/nova'
+    | '/api/public/kirvano-webhook'
     | '/app/_protected/minha-conta'
     | '/app/_protected/notificacoes'
     | '/admin/noticias/'
@@ -328,6 +340,7 @@ export interface RootRouteChildren {
   CheckoutRoute: typeof CheckoutRoute
   OfertaRoute: typeof OfertaRoute
   QuizRoute: typeof QuizRoute
+  ApiPublicKirvanoWebhookRoute: typeof ApiPublicKirvanoWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -465,6 +478,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminNoticiasNovaRouteImport
       parentRoute: typeof AdminRouteRoute
     }
+    '/api/public/kirvano-webhook': {
+      id: '/api/public/kirvano-webhook'
+      path: '/api/public/kirvano-webhook'
+      fullPath: '/api/public/kirvano-webhook'
+      preLoaderRoute: typeof ApiPublicKirvanoWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/app/_protected/': {
       id: '/app/_protected/'
       path: '/'
@@ -584,6 +604,7 @@ const rootRouteChildren: RootRouteChildren = {
   CheckoutRoute: CheckoutRoute,
   OfertaRoute: OfertaRoute,
   QuizRoute: QuizRoute,
+  ApiPublicKirvanoWebhookRoute: ApiPublicKirvanoWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
