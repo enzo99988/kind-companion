@@ -197,6 +197,56 @@ export type Database = {
           },
         ]
       }
+      payment_webhook_events: {
+        Row: {
+          created_at: string
+          error_message: string | null
+          event_id: string
+          event_type: string
+          id: string
+          processed_at: string | null
+          provider: string
+          received_at: string
+          status: string
+          subscription_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          error_message?: string | null
+          event_id: string
+          event_type: string
+          id?: string
+          processed_at?: string | null
+          provider?: string
+          received_at?: string
+          status?: string
+          subscription_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          error_message?: string | null
+          event_id?: string
+          event_type?: string
+          id?: string
+          processed_at?: string | null
+          provider?: string
+          received_at?: string
+          status?: string
+          subscription_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "payment_webhook_events_subscription_id_fkey"
+            columns: ["subscription_id"]
+            isOneToOne: false
+            referencedRelation: "subscriptions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           account_status: string
@@ -248,6 +298,60 @@ export type Database = {
           starts_at?: string
           updated_at?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      subscriptions: {
+        Row: {
+          canceled_at: string | null
+          created_at: string
+          email: string
+          ends_at: string | null
+          id: string
+          offer_name: string | null
+          plan_code: string | null
+          provider: string
+          provider_sale_id: string | null
+          provider_subscription_id: string | null
+          refunded_at: string | null
+          started_at: string
+          status: string
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          canceled_at?: string | null
+          created_at?: string
+          email: string
+          ends_at?: string | null
+          id?: string
+          offer_name?: string | null
+          plan_code?: string | null
+          provider?: string
+          provider_sale_id?: string | null
+          provider_subscription_id?: string | null
+          refunded_at?: string | null
+          started_at?: string
+          status?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          canceled_at?: string | null
+          created_at?: string
+          email?: string
+          ends_at?: string | null
+          id?: string
+          offer_name?: string | null
+          plan_code?: string | null
+          provider?: string
+          provider_sale_id?: string | null
+          provider_subscription_id?: string | null
+          refunded_at?: string | null
+          started_at?: string
+          status?: string
+          updated_at?: string
+          user_id?: string | null
         }
         Relationships: []
       }
